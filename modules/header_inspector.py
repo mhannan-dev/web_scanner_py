@@ -1,5 +1,8 @@
 import requests
+import urllib3
 from urllib.parse import urlparse
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from utils.logger import Logger
 from utils.helpers import retry, mask_sensitive
 from utils.exceptions import ConnectionError, TimeoutError, InvalidTargetError

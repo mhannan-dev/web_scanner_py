@@ -1,121 +1,46 @@
 {
-  "metadata": {
-    "target": "http://example.com",
-    "timestamp": "2026-06-25T10:25:28.770255",
-    "duration_seconds": 30.21,
-    "environment": {
-      "python_version": "3.12.10",
-      "platform": "win32"
-    }
+  "scan_timestamp": "2026-06-25T04:47:27Z",
+  "scan_duration_seconds": 40.06,
+  "target": {
+    "url": "https://zenithia.sparktro.com",
+    "follow_redirects": true,
+    "max_redirects": 5,
+    "timeout": 10,
+    "verify_ssl": true
+  },
+  "environment": {
+    "python_version": "3.12.10",
+    "os": "Windows",
+    "os_version": "10.0.26200",
+    "platform": "Windows-11-10.0.26200-SP0"
   },
   "summary": {
-    "total_checks": 15,
-    "passed": 9,
-    "warnings": 6,
-    "failed": 0
+    "total_checks": 3,
+    "passed": 0,
+    "failed": 0,
+    "warnings": 0
   },
   "results": {
-    "headers": {
-      "x-frame-options": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure x-frame-options on the server."
-      },
-      "content-security-policy": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure content-security-policy on the server."
-      },
-      "x-content-type-options": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure x-content-type-options on the server."
-      },
-      "strict-transport-security": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure strict-transport-security on the server."
-      },
-      "referrer-policy": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure referrer-policy on the server."
-      },
-      "x-xss-protection": {
-        "present": false,
-        "value": null,
-        "status": "WARNING",
-        "recommendation": "Configure x-xss-protection on the server."
-      }
-    },
-    "forms": [],
-    "network": [
+    "banners": [
       {
         "port": 80,
         "state": "OPEN",
-        "service": "Unknown",
-        "banner": "HTTP/1.1 200 OK\r",
+        "service": "nginx/1.24.0 (Ubuntu)",
+        "banner": "HTTP/1.1 301 Moved Permanently\r\nServer: nginx/1.24.0 (Ubuntu)\r\nDate: Thu, 25 Jun 2026 04:46:50 GMT\r\nContent-Type: text/html\r\nContent-Length: 178\r\nConnection: close\r\nLocation: https://zenithia.sparktro",
         "protocol": "TCP"
       },
       {
         "port": 443,
         "state": "OPEN",
-        "service": "Unknown",
-        "banner": "HTTP/1.1 400 Bad Request\r",
-        "protocol": "TCP"
-      },
-      {
-        "port": 8080,
-        "state": "OPEN",
-        "service": "Unknown",
-        "banner": null,
-        "protocol": "TCP"
-      },
-      {
-        "port": 8443,
-        "state": "OPEN",
-        "service": "Unknown",
-        "banner": "HTTP/1.1 400 Bad Request\r",
-        "protocol": "TCP"
-      },
-      {
-        "port": 3306,
-        "state": "CLOSED",
-        "service": "Unknown",
-        "banner": null,
-        "protocol": "TCP"
-      },
-      {
-        "port": 5432,
-        "state": "CLOSED",
-        "service": "Unknown",
-        "banner": null,
-        "protocol": "TCP"
-      },
-      {
-        "port": 6379,
-        "state": "CLOSED",
-        "service": "Unknown",
-        "banner": null,
+        "service": "HTTPS",
+        "banner": "",
         "protocol": "TCP"
       },
       {
         "port": 22,
-        "state": "CLOSED",
-        "service": "Unknown",
-        "banner": null,
-        "protocol": "TCP"
-      },
-      {
-        "port": 21,
-        "state": "CLOSED",
-        "service": "Unknown",
-        "banner": null,
+        "state": "OPEN",
+        "service": "SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16",
+        "banner": "SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16\r\n",
         "protocol": "TCP"
       }
     ]
