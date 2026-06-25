@@ -1,5 +1,5 @@
 {
-    "target_url": "http://localhost:8000",
+    "target_url": "http://localhost:8002/",
     "ports": [80, 443, 8080, 8443, 3306, 5432, 6379, 22, 21],
     "header_checks": [
         "X-Frame-Options",

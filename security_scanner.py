@@ -1,6 +1,7 @@
 import argparse
 import sys
 import os
+from dotenv import load_dotenv
 
 from utils.logger import Logger
 from utils.helpers import validate_url, sanitize_url, load_config
@@ -17,15 +18,15 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             'Examples:\n'
-            '  python security_scanner.py --url http://localhost:8000\n'
+            '  python security_scanner.py --url http://localhost:8002/\n'
             '  python security_scanner.py --url https://example.com --config config.json\n'
-            '  python security_scanner.py --url http://localhost:8000 --output report.json --log-level DEBUG\n'
+            '  python security_scanner.py --url http://localhost:8002/ --output report.json --log-level DEBUG\n'
         )
     )
     parser.add_argument(
         '-u', '--url',
-        required=True,
-        help='Target URL to scan (e.g., http://localhost:8000)'
+        required=False,
+        help='Target URL to scan (e.g., http://localhost:8002/). Can also be set via target_url in .env'
     )
     parser.add_argument(
         '-c', '--config',
@@ -77,12 +78,18 @@ def setup_logging(level_name):
 
 
 def main():
+    load_dotenv()
     args = parse_args()
     setup_logging(args.log_level)
 
     Logger.info('Security Scanner v1.0')
 
-    url = sanitize_url(args.url)
+    raw_url = args.url or os.environ.get('target_url') or os.environ.get('TARGET_URL') or 'http://localhost:8002/'
+    if not raw_url:
+        Logger.critical('Target URL must be provided via --url argument or target_url in .env file.')
+        sys.exit(1)
+
+    url = sanitize_url(raw_url)
     if not validate_url(url):
         Logger.critical(f'Invalid target URL: {url}')
         sys.exit(1)
