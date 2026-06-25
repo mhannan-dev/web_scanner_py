@@ -1,12 +1,12 @@
 {
-  "scan_timestamp": "2026-06-25T04:47:27Z",
-  "scan_duration_seconds": 40.06,
+  "scan_timestamp": "2026-06-25T04:48:31Z",
+  "scan_duration_seconds": 35.79,
   "target": {
     "url": "https://zenithia.sparktro.com",
     "follow_redirects": true,
     "max_redirects": 5,
     "timeout": 10,
-    "verify_ssl": true
+    "verify_ssl": false
   },
   "environment": {
     "python_version": "3.12.10",
@@ -15,18 +15,56 @@
     "platform": "Windows-11-10.0.26200-SP0"
   },
   "summary": {
-    "total_checks": 3,
-    "passed": 0,
-    "failed": 0,
+    "total_checks": 9,
+    "passed": 3,
+    "failed": 3,
     "warnings": 0
   },
   "results": {
+    "headers": {
+      "X-Frame-Options": {
+        "present": true,
+        "value": "SA****IN",
+        "status": "PASS",
+        "recommendation": "Header is properly configured."
+      },
+      "Content-Security-Policy": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Implement a CSP to mitigate XSS and data injection attacks."
+      },
+      "X-Content-Type-Options": {
+        "present": true,
+        "value": "no****ff",
+        "status": "PASS",
+        "recommendation": "Header is properly configured."
+      },
+      "Strict-Transport-Security": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Enable HSTS to enforce HTTPS connections."
+      },
+      "Referrer-Policy": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set a Referrer-Policy to control referrer information leakage."
+      },
+      "X-XSS-Protection": {
+        "present": true,
+        "value": "1;****ck",
+        "status": "PASS",
+        "recommendation": "Header is properly configured."
+      }
+    },
     "banners": [
       {
         "port": 80,
         "state": "OPEN",
         "service": "nginx/1.24.0 (Ubuntu)",
-        "banner": "HTTP/1.1 301 Moved Permanently\r\nServer: nginx/1.24.0 (Ubuntu)\r\nDate: Thu, 25 Jun 2026 04:46:50 GMT\r\nContent-Type: text/html\r\nContent-Length: 178\r\nConnection: close\r\nLocation: https://zenithia.sparktro",
+        "banner": "HTTP/1.1 301 Moved Permanently\r\nServer: nginx/1.24.0 (Ubuntu)\r\nDate: Thu, 25 Jun 2026 04:47:55 GMT\r\nContent-Type: text/html\r\nContent-Length: 178\r\nConnection: close\r\nLocation: https://zenithia.sparktro",
         "protocol": "TCP"
       },
       {
