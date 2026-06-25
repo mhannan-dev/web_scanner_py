@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "target": "http://example.com",
+    "timestamp": "2026-06-25T10:25:28.770255",
+    "duration_seconds": 30.21,
+    "environment": {
+      "python_version": "3.12.10",
+      "platform": "win32"
+    }
+  },
+  "summary": {
+    "total_checks": 15,
+    "passed": 9,
+    "warnings": 6,
+    "failed": 0
+  },
+  "results": {
+    "headers": {
+      "x-frame-options": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure x-frame-options on the server."
+      },
+      "content-security-policy": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure content-security-policy on the server."
+      },
+      "x-content-type-options": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure x-content-type-options on the server."
+      },
+      "strict-transport-security": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure strict-transport-security on the server."
+      },
+      "referrer-policy": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure referrer-policy on the server."
+      },
+      "x-xss-protection": {
+        "present": false,
+        "value": null,
+        "status": "WARNING",
+        "recommendation": "Configure x-xss-protection on the server."
+      }
+    },
+    "forms": [],
+    "network": [
+      {
+        "port": 80,
+        "state": "OPEN",
+        "service": "Unknown",
+        "banner": "HTTP/1.1 200 OK\r",
+        "protocol": "TCP"
+      },
+      {
+        "port": 443,
+        "state": "OPEN",
+        "service": "Unknown",
+        "banner": "HTTP/1.1 400 Bad Request\r",
+        "protocol": "TCP"
+      },
+      {
+        "port": 8080,
+        "state": "OPEN",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      },
+      {
+        "port": 8443,
+        "state": "OPEN",
+        "service": "Unknown",
+        "banner": "HTTP/1.1 400 Bad Request\r",
+        "protocol": "TCP"
+      },
+      {
+        "port": 3306,
+        "state": "CLOSED",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      },
+      {
+        "port": 5432,
+        "state": "CLOSED",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      },
+      {
+        "port": 6379,
+        "state": "CLOSED",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      },
+      {
+        "port": 22,
+        "state": "CLOSED",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      },
+      {
+        "port": 21,
+        "state": "CLOSED",
+        "service": "Unknown",
+        "banner": null,
+        "protocol": "TCP"
+      }
+    ]
+  }
+}

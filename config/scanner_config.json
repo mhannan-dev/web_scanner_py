@@ -1,0 +1,15 @@
+{
+    "target_url": "http://localhost:8000",
+    "ports": [80, 443, 8080, 8443, 3306, 5432, 6379, 22, 21],
+    "header_checks": [
+        "X-Frame-Options",
+        "Content-Security-Policy",
+        "X-Content-Type-Options",
+        "Strict-Transport-Security",
+        "Referrer-Policy",
+        "X-XSS-Protection"
+    ],
+    "log_level": "INFO",
+    "timeout": 5,
+    "ignore_ssl_errors": true
+}

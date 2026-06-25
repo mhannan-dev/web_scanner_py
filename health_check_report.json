@@ -1,0 +1,26 @@
+{
+    "target": "http://example.com",
+    "headers": {
+        "X-Frame-Options": {
+            "present": false,
+            "value": null
+        },
+        "Content-Security-Policy": {
+            "present": false,
+            "value": null
+        },
+        "X-Content-Type-Options": {
+            "present": false,
+            "value": null
+        },
+        "Strict-Transport-Security": {
+            "present": false,
+            "value": null
+        }
+    },
+    "forms": [],
+    "banner": {
+        "port": 80,
+        "server": "cloudflare"
+    }
+}
