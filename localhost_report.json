@@ -1,0 +1,79 @@
+{
+  "scan_timestamp": "2026-06-25T05:00:07Z",
+  "scan_duration_seconds": 14.87,
+  "target": {
+    "url": "http://localhost:8002",
+    "follow_redirects": true,
+    "max_redirects": 5,
+    "timeout": 10,
+    "verify_ssl": false
+  },
+  "environment": {
+    "python_version": "3.12.10",
+    "os": "Windows",
+    "os_version": "10.0.26200",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "summary": {
+    "total_checks": 8,
+    "passed": 0,
+    "failed": 6,
+    "warnings": 0
+  },
+  "results": {
+    "headers": {
+      "X-Frame-Options": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set to DENY or SAMEORIGIN to prevent clickjacking attacks."
+      },
+      "Content-Security-Policy": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Implement a CSP to mitigate XSS and data injection attacks."
+      },
+      "X-Content-Type-Options": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set to nosniff to prevent MIME type sniffing."
+      },
+      "Strict-Transport-Security": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Enable HSTS to enforce HTTPS connections."
+      },
+      "Referrer-Policy": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set a Referrer-Policy to control referrer information leakage."
+      },
+      "X-XSS-Protection": {
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Deprecated. Use CSP instead. If set, use \"1; mode=block\"."
+      }
+    },
+    "banners": [
+      {
+        "port": 80,
+        "state": "OPEN",
+        "service": "Apache/2.4.54 (Win64) OpenSSL/1.1.1t PHP/8.3.30",
+        "banner": "HTTP/1.1 200 OK\r\nDate: Thu, 25 Jun 2026 04:59:54 GMT\r\nServer: Apache/2.4.54 (Win64) OpenSSL/1.1.1t PHP/8.3.30\r\nContent-Length: 729\r\nConnection: close\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n<!DOCTYP",
+        "protocol": "TCP"
+      },
+      {
+        "port": 3306,
+        "state": "OPEN",
+        "service": "J\u0000\u0000\u0000",
+        "banner": "J\u0000\u0000\u0000\n5.7.39\u0000\u000e\u0000\u0000\u0000+dS6<%8w\u0000\b\u0002\u0000\u0015\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000*:\u001atL%qtc\u001afE\u0000mysql_native_password\u0000",
+        "protocol": "TCP"
+      }
+    ]
+  }
+}

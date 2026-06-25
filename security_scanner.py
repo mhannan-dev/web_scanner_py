@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 from dotenv import load_dotenv
+from urllib.parse import urlparse
 
 from utils.logger import Logger
 from utils.helpers import validate_url, sanitize_url, load_config
@@ -156,7 +157,16 @@ def main():
     report_gen.end_scan()
     report_gen.generate_console_report()
 
-    output_path = args.output or config.get('output', {}).get('json', 'report.json')
+    output_path = args.output
+    if not output_path:
+        default_json = config.get('output', {}).get('json')
+        if default_json and default_json != 'report.json':
+            output_path = default_json
+        else:
+            parsed = urlparse(url)
+            safe_host = parsed.hostname.replace('.', '_') if parsed.hostname else 'unknown'
+            output_path = f"{safe_host}_report.json"
+
     if output_path:
         report_gen.generate_json_report(output_path)
 
