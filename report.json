@@ -1,8 +1,8 @@
 {
-  "scan_timestamp": "2026-06-25T04:48:31Z",
-  "scan_duration_seconds": 35.79,
+  "scan_timestamp": "2026-06-25T04:52:38Z",
+  "scan_duration_seconds": 15.42,
   "target": {
-    "url": "https://zenithia.sparktro.com",
+    "url": "http://localhost:8002",
     "follow_redirects": true,
     "max_redirects": 5,
     "timeout": 10,
@@ -15,18 +15,18 @@
     "platform": "Windows-11-10.0.26200-SP0"
   },
   "summary": {
-    "total_checks": 9,
-    "passed": 3,
-    "failed": 3,
+    "total_checks": 8,
+    "passed": 0,
+    "failed": 6,
     "warnings": 0
   },
   "results": {
     "headers": {
       "X-Frame-Options": {
-        "present": true,
-        "value": "SA****IN",
-        "status": "PASS",
-        "recommendation": "Header is properly configured."
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set to DENY or SAMEORIGIN to prevent clickjacking attacks."
       },
       "Content-Security-Policy": {
         "present": false,
@@ -35,10 +35,10 @@
         "recommendation": "Implement a CSP to mitigate XSS and data injection attacks."
       },
       "X-Content-Type-Options": {
-        "present": true,
-        "value": "no****ff",
-        "status": "PASS",
-        "recommendation": "Header is properly configured."
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Set to nosniff to prevent MIME type sniffing."
       },
       "Strict-Transport-Security": {
         "present": false,
@@ -53,32 +53,25 @@
         "recommendation": "Set a Referrer-Policy to control referrer information leakage."
       },
       "X-XSS-Protection": {
-        "present": true,
-        "value": "1;****ck",
-        "status": "PASS",
-        "recommendation": "Header is properly configured."
+        "present": false,
+        "value": null,
+        "status": "FAIL",
+        "recommendation": "Deprecated. Use CSP instead. If set, use \"1; mode=block\"."
       }
     },
     "banners": [
       {
         "port": 80,
         "state": "OPEN",
-        "service": "nginx/1.24.0 (Ubuntu)",
-        "banner": "HTTP/1.1 301 Moved Permanently\r\nServer: nginx/1.24.0 (Ubuntu)\r\nDate: Thu, 25 Jun 2026 04:47:55 GMT\r\nContent-Type: text/html\r\nContent-Length: 178\r\nConnection: close\r\nLocation: https://zenithia.sparktro",
+        "service": "Apache/2.4.54 (Win64) OpenSSL/1.1.1t PHP/8.3.30",
+        "banner": "HTTP/1.1 200 OK\r\nDate: Thu, 25 Jun 2026 04:52:25 GMT\r\nServer: Apache/2.4.54 (Win64) OpenSSL/1.1.1t PHP/8.3.30\r\nContent-Length: 729\r\nConnection: close\r\nContent-Type: text/html;charset=UTF-8\r\n\r\n<!DOCTYP",
         "protocol": "TCP"
       },
       {
-        "port": 443,
+        "port": 3306,
         "state": "OPEN",
-        "service": "HTTPS",
-        "banner": "",
-        "protocol": "TCP"
-      },
-      {
-        "port": 22,
-        "state": "OPEN",
-        "service": "SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16",
-        "banner": "SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.16\r\n",
+        "service": "J\u0000\u0000\u0000",
+        "banner": "J\u0000\u0000\u0000\n5.7.39\u0000\n\u0000\u0000\u0000\u000464J\u0007.)u\u0000\b\u0002\u0000\u0015\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000t29\u000ed&\u0002F./U^\u0000mysql_native_password\u0000",
         "protocol": "TCP"
       }
     ]
